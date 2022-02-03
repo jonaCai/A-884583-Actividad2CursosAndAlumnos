@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actividad2_DeCursosAndAlumnos", "Actividad2_DeCursosAndAlumnos\Actividad2_DeCursosAndAlumnos.csproj", "{F661ADDA-2007-45EF-86F0-FDA5E29B66EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-884583-Actividad2CursosAndAlumnos", "Actividad2_DeCursosAndAlumnos\A-884583-Actividad2CursosAndAlumnos.csproj", "{F661ADDA-2007-45EF-86F0-FDA5E29B66EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
