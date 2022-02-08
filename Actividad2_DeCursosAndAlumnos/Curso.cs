@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Actividad2_DeCursosAndAlumnos
+namespace A_884583_Actividad2CursosAndAlumnos
 {
-    class Curso
+    public class Curso
     {
-        public int codigo { get; set; }
+        public string codigo { get; set; }
         public int capacidadmaxima { get; set; }
 
 
-        public Curso(string code, string capacidad)
-        {            
-            codigo = Validadores.validarint(code);
-            capacidadmaxima = Validadores.validarint(capacidad);
+        public Curso(string linea)
+        {
+            var datos = linea.Split('|');
+            codigo = datos[0];
+            capacidadmaxima =int.Parse(datos[1]);
                     
         }
     }

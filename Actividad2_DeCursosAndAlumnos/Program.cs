@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,44 +20,55 @@ o D) Reporte alumnos por curso en pantalla.
     {
         static void Main(string[] args)
         {
-            string eleccion;
-            Console.WriteLine("Bienvenido! En este programa usted puede hacer lo siguiente:"
-                +"\n A. Ingresar alumnos \n B. Ingresar cursos \n C. Asignar automaticamente alumnos a cursos "
-                +"\n D. Obtener reporte de alumnos por curso. \n E. Exit.");
+
            
-            Console.Write("Eleccion:");eleccion = Console.ReadLine().ToLower();
+            string eleccion;
 
-            switch(eleccion)
+            do
             {
-                case "a":
-                    IngresoDeAlumnos();
-                    break;
+                NominaAlumnos.CargarNominaAlumnos();
+                NominaCursos.CargarNominaCursos();
 
-                case "b":
+                Console.WriteLine("Bienvenido! En este programa usted puede hacer lo siguiente:"
+                + "\n A. Ingresar alumnos \n B. Ingresar cursos \n C. Asignar automaticamente alumnos a cursos "
+                + "\n D. Obtener reporte de alumnos por curso. \n E. Exit.");
 
-                    break;
+                Console.Write("Eleccion:"); eleccion = Console.ReadLine().ToLower();
 
-                case "c":
-                    break;
+                switch (eleccion)
+                {
+                    case "a":
+                        NominaAlumnos.IngresoDeAlumnos();
+                        Console.WriteLine();
+                        break;
 
-                case "d":
-                    break;
+                    case "b":
+                       NominaCursos.IngresoDeCursos();
+                        Console.WriteLine();
+                        break;
+                    case "c":
+                        
+                        NominaAlumnos.AsignacionEquitativa();
+                        Console.WriteLine();
+                        break;
 
-                case "e":
-                    break;
-            }
-            Console.ReadLine();
+                    case "d":
+                        NominaAlumnos.AsignacionEquitativa();
+                        NominaCursos.reporteAl_cur();
+
+                        break;
+
+                    case "e":
+                        
+                        Console.WriteLine();
+                        break;
+                }
+
+            } while (eleccion != "e");
+            
+         
 
         }
-
-        static void IngresoDeAlumnos()
-        {
-            string Txt;
-            string ingreso;
-
-
-
-        }
-
+                
     }
 }
