@@ -8,16 +8,25 @@ namespace A_884583_Actividad2CursosAndAlumnos
 {
     class AlumnosCursos
     {
-        public string codigoCurso { get; set; }
-        public int legajo { get; set; }
+        private string codigoCurso { get; set; }
+        private int legajo { get; set; }
 
         public AlumnosCursos(string code, int legajo)
         {
             this.codigoCurso = code;
-            this.legajo = legajo;
-            
+            this.legajo = legajo;            
         }
+        public string CodigoCurso
+        {
+            get { return codigoCurso; }
+            set { codigoCurso = value ; }
 
+        }
+        public int Legajo
+        {
+            get { return legajo; }
+            set { legajo = value; }
 
+        }
     }
 }

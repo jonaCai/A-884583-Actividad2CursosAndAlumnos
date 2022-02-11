@@ -1,0 +1,48 @@
+Prueba 1 camino regular. Ingreso de alumnos (10) ingreso de cursos (2) asignacion de alumnos a cursos y reporte en pantalla.
+
+Eleccion : a 
+ingrese n° legado del alumno: 1
+alumno ingresado con exito, desea ingresar mas? s/n: s 
+{hacerlo 10 veces sumando uno al registro.}
+...desea ingresar mas?: n
+(muestra el menu en pantalla)
+Eleccion: b
+ingrese el codigo de curso: a 
+ingrese capacidad maxima: 30
+...Desea ingresar mas?:s
+ingrese el codigo de curso: b 
+ingrese capacidad maxima: 30
+...Desea ingresar mas?:n 
+(muestra el menu en pantalla)
+Eleccion: C
+{sin salida en pantalla}
+{Menu principal}
+Eleccion: d
+{Salida:
+Legajo alumno: 1
+codigos cursos: a, b, ...}
+{Menu principal}
+Eleccion: e
+{fin del programa}
+
+Prueba 2 añadir 5 alumnos y un curso partiendo de la base el punto anterior, realizar la asignacion y pedir reporte en pantalla.
+
+Eleccion: a
+ingrese n° legajo del alumno: 11...{repetir hasta el 15.}
+...desea ingresar mas?: n
+(muestra el menu en pantalla)
+Eleccion: b
+ingrese el codigo de curso: c 
+ingrese capacidad maxima: 30
+...Desea ingresar mas?:n 
+(muestra el menu en pantalla)
+Eleccion: C
+{sin salida en pantalla}
+{Menu principal}
+Eleccion: d
+{Salida:
+Legajo alumno: 1
+codigos cursos: a, b, c...}
+{Menu principal}
+Eleccion: e
+{fin del programa}

@@ -7,7 +7,7 @@ using System.IO;
 namespace A_884583_Actividad2CursosAndAlumnos
 {
     static class NominaAlumnos
-    {
+    {//podriamos restringir el nivel de accero de los diccionarios y solo accederlos a traves de las propiedades...
         public static Dictionary<int, Alumno> nomina = new Dictionary<int, Alumno>();
         static string nombreArchivo = "NominaAlumnos.txt";
         public static Dictionary<string, AlumnosCursos> Al_Cur = new Dictionary<string, AlumnosCursos>();
@@ -26,7 +26,7 @@ namespace A_884583_Actividad2CursosAndAlumnos
                         if (!Validadores.ValidarCodigo(int.Parse(x[0])))
                         {
                             var alumno = new Alumno(linea);
-                            nomina.Add(alumno.legajo, alumno);
+                            nomina.Add(alumno.Legajo, alumno);
                         }
 
 
@@ -94,21 +94,21 @@ namespace A_884583_Actividad2CursosAndAlumnos
             int Curso_al=0;
             var alumnkeys = nomina.Keys.ToArray();
             var cursoKeys = NominaCursos.nomina.Keys.ToArray();
-            var rankAlumn = nomina.ToList();            
-
+            var rankAlumn = nomina.ToList();
+            int TopeAlCur=3;
             for (int b= 0; b<cantidadAlumnos; b++)
             {
                 max_cursos_al = 0;                
                 do
                 {
-                    capacidad_max = NominaCursos.nomina[cursoKeys[Curso_al]].capacidadmaxima;
-                    int repartocurso = Al_Cur.Count(x => x.Value.codigoCurso == cursoKeys[Curso_al]);
+                    capacidad_max = NominaCursos.nomina[cursoKeys[Curso_al]].Capacidadmaxima;
+                    int repartocurso = Al_Cur.Count(x => x.Value.CodigoCurso == cursoKeys[Curso_al]);
                     if (capacidad_max > reparto)
                     {                        
                         if (repartocurso == reparto)
                         {
                             //cuento la cantidad de veces que aparece un codigo de curso en el diccionario, para distribuir equitativamente
-                            if (Al_Cur.Count(x => x.Value.legajo == alumnkeys[b]) < 3)
+                            if (Al_Cur.Count(x => x.Value.Legajo == alumnkeys[b]) < 3)
                             {
                                 //si el alumno se quedo fuera por el reparto, añadirlo igual ya que hay espacio aun.
                                 key_alcur = alumnkeys[b].ToString() + cursoKeys[Curso_al].ToString();
@@ -128,13 +128,13 @@ namespace A_884583_Actividad2CursosAndAlumnos
                     {
                         if (repartocurso < capacidad_max)
                         {                            
-                            rankAlumn.Sort((a, c) => a.Value.ranking.CompareTo(c.Value.ranking));
+                            rankAlumn.Sort((a, c) => a.Value.Ranking.CompareTo(c.Value.Ranking));
                             //ingreso  todos los alumnos que quepan al curso rankeado.
 
                             for (int cont_rank= rankAlumn.Count-1; cont_rank>0;--cont_rank)
                             {
-                                repartocurso = Al_Cur.Count(x => x.Value.codigoCurso == cursoKeys[Curso_al]);
-                                if ((Al_Cur.Count(x => x.Value.legajo == rankAlumn[cont_rank].Value.legajo) < 3) && (repartocurso < capacidad_max))
+                                repartocurso = Al_Cur.Count(x => x.Value.CodigoCurso == cursoKeys[Curso_al]);
+                                if ((Al_Cur.Count(x => x.Value.Legajo == rankAlumn[cont_rank].Value.Legajo) < 3) && (repartocurso < capacidad_max))
                                 {
                                     key_alcur = rankAlumn[cont_rank].Key.ToString() + cursoKeys[Curso_al].ToString();
                                     AlumnosCursos alumnoscursos = new AlumnosCursos(cursoKeys[Curso_al].ToString(), rankAlumn[cont_rank].Key);
@@ -149,20 +149,24 @@ namespace A_884583_Actividad2CursosAndAlumnos
 
                         //rank
                     }
-                        
+                       
+                    if (cantidadCursos - 1 < 3)
+                    {
+                        TopeAlCur = cantidadCursos;
+                    }
 
-                    if(Curso_al == cantidadCursos-1)//si cantidad de cursos fuera cero deberia alertarlo al usuario.
+                    if (Curso_al == cantidadCursos - 1)//si cantidad de cursos fuera cero deberia alertarlo al usuario.
                     {
                         Curso_al = 0;
-                        
                     }
-                    else { Curso_al +=1; }
+                    else { Curso_al += 1; }
+                    
                     
                     max_cursos_al +=1;
                     
                         
 
-                } while (max_cursos_al<3);
+                } while (max_cursos_al<TopeAlCur);
                              
                 
 
@@ -173,7 +177,7 @@ namespace A_884583_Actividad2CursosAndAlumnos
             {
                 foreach (var a in Al_Cur)
                 {
-                    Writer.WriteLine(a.Key+" | "+a.Value.codigoCurso+", "+a.Value.legajo.ToString());
+                    Writer.WriteLine(a.Key+" | "+a.Value.CodigoCurso+", "+a.Value.Legajo.ToString());
                 }
             }
 

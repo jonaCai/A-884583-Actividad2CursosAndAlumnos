@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace A_884583_Actividad2CursosAndAlumnos
 {
-    public class Curso
+    class Curso
     {
-        public string codigo { get; set; }
-        public int capacidadmaxima { get; set; }
+        private string codigo { get; set; }
+        private int capacidadmaxima { get; set; }
 
 
         public Curso(string linea)
@@ -18,6 +18,17 @@ namespace A_884583_Actividad2CursosAndAlumnos
             codigo = datos[0];
             capacidadmaxima =int.Parse(datos[1]);
                     
+        }
+        public string Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }                                   
+        }
+        public int Capacidadmaxima
+        {
+            get { return capacidadmaxima; }
+            set { capacidadmaxima = value; }
+
         }
     }
 }

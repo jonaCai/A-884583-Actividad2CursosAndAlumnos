@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.IO;
 namespace A_884583_Actividad2CursosAndAlumnos
 {
-    public class Alumno
+    class Alumno
     {
-        public int legajo { get; set; }
-        public decimal ranking { get; set; }
+        private int legajo { get; set; }
+        private decimal ranking { get; set; }
 
         public Alumno(string linea)
         {  
@@ -18,7 +18,18 @@ namespace A_884583_Actividad2CursosAndAlumnos
             ranking = decimal.Parse(datos[1]);                
             
         }
+        public int Legajo
+        {
+            get { return legajo; }
+            set { legajo = value; }
 
-       
+        }
+        public decimal Ranking
+        {
+            get { return ranking; }
+            set { ranking = value; }
+
+        }
+
     }
 }

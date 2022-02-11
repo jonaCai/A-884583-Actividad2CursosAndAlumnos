@@ -21,7 +21,7 @@ o D) Reporte alumnos por curso en pantalla.
         static void Main(string[] args)
         {
 
-           
+            bool check_asig=false;
             string eleccion;
 
             do
@@ -47,13 +47,14 @@ o D) Reporte alumnos por curso en pantalla.
                         Console.WriteLine();
                         break;
                     case "c":
-                        
+                        check_asig = true;
                         NominaAlumnos.AsignacionEquitativa();
                         Console.WriteLine();
                         break;
 
                     case "d":
-                        NominaAlumnos.AsignacionEquitativa();
+                        if (check_asig == false) { NominaAlumnos.AsignacionEquitativa(); }
+                        //si se ejecuto c, no deberia ejecutarse.
                         NominaCursos.reporteAl_cur();
 
                         break;

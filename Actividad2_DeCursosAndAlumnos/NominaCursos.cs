@@ -24,7 +24,7 @@ namespace A_884583_Actividad2CursosAndAlumnos
                         if (!Validadores.ValidarCodigo(x[0]))
                         {
                             var curso = new Curso(linea);
-                            nomina.Add(curso.codigo, curso);
+                            nomina.Add(curso.Codigo, curso);
                         }
 
 
@@ -88,9 +88,9 @@ namespace A_884583_Actividad2CursosAndAlumnos
                 Console.Write("Codigos cursos: ");
                 foreach (var j in NominaAlumnos.Al_Cur)
                 {
-                    if (i.Key == j.Value.legajo)
+                    if (i.Key == j.Value.Legajo)
                     {
-                        Console.Write(j.Value.codigoCurso+", ");
+                        Console.Write(j.Value.CodigoCurso+", ");
 
                     }
 
