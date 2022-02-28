@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace A_884583_Actividad2CursosAndAlumnos
+namespace A_884583_Act2CoursesAndStudents
 {
    /*-	La facultad requiere una aplicación para asignar alumnos a cursos.Para ello se le solicita una aplicación que permita:
 o A) El ingreso de una serie de _alumnos_(identificados por número de legajo), junto con su ránking(un número decimal arbitrario).
@@ -21,41 +21,41 @@ o D) Reporte alumnos por curso en pantalla.
         static void Main(string[] args)
         {
 
-            bool check_asig=false;
-            string eleccion;
+            bool check_assig=false;
+            string choice;
 
             do
             {
-                NominaAlumnos.CargarNominaAlumnos();
-                NominaCursos.CargarNominaCursos();
+                ListStudents.loadListStudents();
+                ListCourses.loadListCourses();
 
-                Console.WriteLine("Bienvenido! En este programa usted puede hacer lo siguiente:"
-                + "\n A. Ingresar alumnos \n B. Ingresar cursos \n C. Asignar automaticamente alumnos a cursos "
-                + "\n D. Obtener reporte de alumnos por curso. \n E. Exit.");
+                Console.WriteLine("Welcome! Choose an item:"
+                + "\n A. Input students \n B. Input courses \n C. Assign courses to students "
+                + "\n D.Get reports of students for courses. \n E. Exit.");
 
-                Console.Write("Eleccion:"); eleccion = Console.ReadLine().ToLower();
+                Console.Write("Choice:"); choice = Console.ReadLine().ToLower();
 
-                switch (eleccion)
+                switch (choice)
                 {
                     case "a":
-                        NominaAlumnos.IngresoDeAlumnos();
+                        ListStudents.InputStudents();
                         Console.WriteLine();
                         break;
 
                     case "b":
-                       NominaCursos.IngresoDeCursos();
+                       ListCourses.InputCourses();
                         Console.WriteLine();
                         break;
                     case "c":
-                        check_asig = true;
-                        NominaAlumnos.AsignacionEquitativa();
+                        check_assig = true;
+                        ListStudents.equitableAssignmetn();
                         Console.WriteLine();
                         break;
 
                     case "d":
-                        if (check_asig == false) { NominaAlumnos.AsignacionEquitativa(); }
+                        if (check_assig == false) { ListStudents.equitableAssignmetn(); }
                         //si se ejecuto c, no deberia ejecutarse.
-                        NominaCursos.reporteAl_cur();
+                        ListCourses.reportStudentsForCourses();
 
                         break;
 
@@ -65,7 +65,7 @@ o D) Reporte alumnos por curso en pantalla.
                         break;
                 }
 
-            } while (eleccion != "e");
+            } while (choice != "e");
             
          
 

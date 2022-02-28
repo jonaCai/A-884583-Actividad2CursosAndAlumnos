@@ -58,14 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno.cs" />
-    <Compile Include="AlumnosCursos.cs" />
-    <Compile Include="Curso.cs" />
-    <Compile Include="NominaAlumnos.cs" />
-    <Compile Include="NominaCursos.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="studenstCourses.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="listStudents.cs" />
+    <Compile Include="listCourses.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validadores.cs" />
+    <Compile Include="validators.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
